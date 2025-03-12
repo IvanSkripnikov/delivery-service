@@ -1,1 +1,1 @@
-INSERT INTO warehouses (name, created, updated) VALUES ('Muhhammajohn', CURRENT_TIMESTAMP(),  CURRENT_TIMESTAMP()), ('Pete Peterson', CURRENT_TIMESTAMP(),  CURRENT_TIMESTAMP());
+INSERT INTO couriers (name, created, updated) VALUES ('Muhhammajohn', CURRENT_TIMESTAMP(),  CURRENT_TIMESTAMP()), ('Pete Peterson', CURRENT_TIMESTAMP(),  CURRENT_TIMESTAMP());

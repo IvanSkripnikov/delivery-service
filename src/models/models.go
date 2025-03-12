@@ -2,6 +2,6 @@ package models
 
 const ServiceDatabase = "NotificationService"
 
-type BookingItem struct {
+type BookingCourier struct {
 	OrderID int `json:"orderId"`
 }

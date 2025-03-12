@@ -12,6 +12,7 @@ import (
 
 func GetCouriersList(w http.ResponseWriter, _ *http.Request) {
 	category := "/v1/couriers/list"
+
 	var couriers []models.Courier
 
 	db := gormdb.GetClient(models.ServiceDatabase)
@@ -46,7 +47,7 @@ func BookCourier(w http.ResponseWriter, r *http.Request) {
 	category := "/v1/couriers/book"
 
 	// получаем параметры
-	var bookingParams models.BookingItem
+	var bookingParams models.BookingCourier
 	err := json.NewDecoder(r.Body).Decode(&bookingParams)
 
 	if checkError(w, err, category) {
@@ -71,7 +72,7 @@ func BookCourier(w http.ResponseWriter, r *http.Request) {
 
 		var newDelivery models.Delivery
 		newDelivery.CourierID = freeCouriers[0].ID
-		newDelivery.OrederID = bookingParams.OrderID
+		newDelivery.OrderID = bookingParams.OrderID
 		newDelivery.Created = currentTimestamp
 		newDelivery.Status = models.StatusNew
 		err = db.Create(&newDelivery).Error

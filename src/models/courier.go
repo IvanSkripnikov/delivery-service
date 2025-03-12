@@ -7,3 +7,5 @@ type Courier struct {
 	Updated int    `gorm:"index;type:bigint" json:"updated"`
 	Busy    int8   `gorm:"type:tinyint" json:"busy"`
 }
+
+func (s Courier) TableName() string { return "couriers" }

@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS couriers (
     id INT auto_increment PRIMARY KEY,
-    name TEXT NOT NULL,
+    name VARCHAR(255) NOT NULL,
     created BIGINT UNSIGNED,
     updated BIGINT UNSIGNED,
-    busy TINYINT default 0
+    busy TINYINT DEFAULT 0
 );
